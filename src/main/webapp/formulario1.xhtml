@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:include src="/resources/templates/header.xhtml" />
+
+<h:body>
+
+	<ui:include src="/resources/templates/nav.xhtml" />
+
+	<h:form>
+		
+		Nombre <h:inputText id="nombre" value="#{beanJSF.nombre}"></h:inputText>
+		
+		Apellido <h:inputText id="apellido" value="#{beanJSF.apellido}"></h:inputText>
+
+		<h:commandButton value="Ajax">
+			<f:ajax execute="nombre apellido" render="salida" />
+		</h:commandButton>
+		
+		<h:outputText id="salida" value="#{beanJSF.holaNombre}"/>
+
+	</h:form>
+	
+	<ui:include src="/resources/templates/footer.xhtml" />
+	
+</h:body>
+</html>

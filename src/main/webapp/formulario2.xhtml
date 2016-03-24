@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:include src="/resources/templates/header.xhtml" />
+
+<h:body>
+	<ui:include src="/resources/templates/nav.xhtml" />
+
+	<h:form>
+		
+		<h1><h:outputText value="Este formulario usa @SessionScoped, la información se mantiene"/></h1>
+		
+		Nombre <h:inputText id="nombre" value="#{saludoBean.nombre}"></h:inputText>
+
+		<h:commandButton value="Ajax">
+			<f:ajax execute="nombre" render="salida" />
+		</h:commandButton>
+		
+		<h:outputText id="salida" value="#{saludoBean.darBienvenida}" />
+		
+	</h:form>
+
+	<ui:include src="/resources/templates/footer.xhtml" />
+</h:body>
+</html>
