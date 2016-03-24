@@ -10,7 +10,7 @@
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 	</servlet>
 
-	<!-- procesar todos los URI que empiecen con /faces ejemplo /faces/index.xhtml -->
+	<!-- procesar todos los URI de archivos .xhtml -->
 	<servlet-mapping>
 		<servlet-name>FacesServlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>

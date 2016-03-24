@@ -17,16 +17,12 @@
 		
 		<h:outputText value="#{msg.cabecera}" escape="false"/>
 		
-		<h:outputText value="#{msg.nombre}"/> <h:inputText id="nombre" value="#{beanJSF.nombre}"></h:inputText>
+		<h:outputText value="#{msg.nombre}" escape="false"/> <h:inputText id="nombre" value="#{beanJSF.nombre}"></h:inputText>
 		
-		<h:outputText value="#{msg.apellido}"/> <h:inputText id="apellido" value="#{beanJSF.apellido}"></h:inputText>
-
-		<h:commandButton value="#{msg['boton.ajax']}">
-			<f:ajax execute="nombre apellido" render="salida" />
-		</h:commandButton>
-		
+		<h:outputText value="#{msg.apellido}" escape="false"/> <h:inputText id="apellido" value="#{beanJSF.apellido}"></h:inputText>
+	
 		<h:commandButton value="#{msg['boton.submit']}">
-			<f:ajax execute="nombre apellido" render="salida" />
+			<f:ajax execute="@all" render="salida" />
 		</h:commandButton>
 		
 		<h:outputText id="salida" value="#{beanJSF.holaNombre}"/>

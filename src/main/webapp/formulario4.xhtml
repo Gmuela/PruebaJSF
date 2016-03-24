@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:include src="/resources/templates/header.xhtml" />
+
+<h:body>
+
+	<ui:include src="/resources/templates/nav.xhtml" />
+
+	<h:form>
+
+		<h:outputText value="#{msg.cabecera}" escape="false" />
+
+		<h:outputText value="#{msg.nombre}" escape="false" />
+		<h:inputText id="nombre" value="#{beanForm4.nombre}" />
+
+		<h:outputText value="#{msg.apellido}" escape="false" />
+		<h:inputText id="apellido" value="#{beanForm4.apellido}" />
+
+		<h:outputText value="#{msg.password}" escape="false" />
+		<h:inputSecret id="password" value="#{beanForm4.password}" />
+		
+		<h:selectManyCheckbox value="#{beanForm4.idiomas}">
+		
+			<f:selectItem itemLabel="Español" itemValue="español" />
+			<f:selectItem itemLabel="Inglés" itemValue="ingles" />
+			<f:selectItem itemLabel="Chino" itemValue="chino" />
+			<f:selectItem itemLabel="Otros" itemValue="otros" />
+		
+		</h:selectManyCheckbox>
+		
+		<h:outputText value="#{msg.textarea}" escape="false" />
+		<h:inputTextarea id="comentario" value="#{beanForm4.comentario}" />
+
+		<h:commandButton value="#{msg['boton.submit']}">
+			<f:ajax execute="@all" render="salida" />
+		</h:commandButton>
+
+		<h:outputText id="salida" value="#{beanForm4.mostrarDatos}" escape="false" />
+
+	</h:form>
+
+	<ui:include src="/resources/templates/footer.xhtml" />
+
+</h:body>
+</html>
